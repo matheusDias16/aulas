@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  //box-sizing: border-box;
+}
+
+/* div {
+  //margin: 0 auto;
+  padding:12px;
+  margin: 50px 100px;
+  height: 200px;
+  width: 200px;
+  border: 1px solid green;
+  //height: 100vh;
+  //background-color: #37ec00;
+
+  //background-image: url(https://lib.social/uploads/cover/naruto/cover/zYymN7Pz3Gxz_250x350.jpg);
+  //background-repeat: no-repeat;
+  
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: center;
+  
+} */
+
+/* p{
+  padding: 4px;
+  background-color: red;
+} */
+/* p:not(:first-of-type) {
+  margin-top: 26px;
+} */
+/* .texto:nth-child(3n + 1) {
+  color: black;
+  font-size: 22px;
+}
+
+#textoId:hover {
+  font-size: 40px;
+  cursor: pointer;
+} */
+
+/* div p{
+  color:blue;
+}
+
+div.texto{
+  color:green;
+} */
+
+
+.grid{
+  
+  margin: 50px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 2rem;
+  
+  grid-template-areas: 
+                        'div-5 div-3 div-2'
+                        'div-5 div-4 div-4' 
+                        'div-5 div-1 div-1';
+}
+
+.elemento{
+  border: 1px solid red;
+  width: 100px;
+  height: 100px
+}
+
+.div-1{
+  grid-area: div-1;
+}
+.div-2{
+  grid-area: div-2;
+}
+.div-3{
+  grid-area: div-3;
+}
+.div-4{
+  grid-area: div-4;
+}
+.div-5{
+  grid-area: div-5;
+}
+
+
+
+
+
+
+/* @media (max-width: 768px) {
+  div p {
+    background-color: red;
+  }
+} */
