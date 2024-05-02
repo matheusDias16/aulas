@@ -1,4 +1,4 @@
-* {
+* { /* da o padrão para todos */ 
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -14,8 +14,8 @@
   //height: 100vh;
   //background-color: #37ec00;
 
-  //background-image: url(https://lib.social/uploads/cover/naruto/cover/zYymN7Pz3Gxz_250x350.jpg);
-  //background-repeat: no-repeat;
+  //background-image: url(https://lib.social/uploads/cover/naruto/cover/zYymN7Pz3Gxz_250x350.jpg); //como se fosse um img
+  //background-repeat: no-repeat; //PARA NÃO REPETIR  
   
   //display: flex;
   //flex-direction: column;
@@ -59,7 +59,7 @@ div.texto{
   column-gap: 2rem;
   
   grid-template-areas: 
-                        'div-5 div-3 div-2'
+                        'div-5 div-3 div-2' 
                         'div-5 div-4 div-4' 
                         'div-5 div-1 div-1';
 }
@@ -90,7 +90,7 @@ div.texto{
 
 
 
-
+ /* USA PARA MOBILE */
 /* @media (max-width: 1440px) {
   div p {
     background-color: red;
