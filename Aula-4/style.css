@@ -7,7 +7,7 @@
 .position {
   border: 4px solid rgb(255, 0, 0);
   height: 100vh;
-  /* display: none; */
+  display: none;
 }
 
 .absolute { /* sempre fica acima de todos os conteudos sem deslocar outras partes */
@@ -99,10 +99,6 @@
   }
 }
 
-.animation {
-  display: unset;
-}
-
 /* .ghost {
   position: relative;
   // border: 1px solid red; 
@@ -161,9 +157,6 @@
   }
 }
 
-.animation {
-  display: unset;
-}
 
 .esfera {
   position: relative;
@@ -214,7 +207,7 @@
 }
 
 .animation {
-  display: unset;
+  display: none;
 }
 
 .wifi {
@@ -236,5 +229,5 @@
 }
 
 .javascript {
-  display: none;
+  display: unset;
 }
