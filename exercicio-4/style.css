@@ -1,6 +1,10 @@
+*{
+    overflow-x: hidden;
+}
+
 header{
     width: 100%;
-    /* padding: 28px 8%; */
+    
 }
 img{
 width: 100px;
@@ -9,7 +13,7 @@ margin-left: 20px;
 .lista{
 display: flex;
 list-style: none;
-gap: 45px;
+gap: 15px;
 }
 .btn{
     border: none;
@@ -35,6 +39,7 @@ li a {
     background-color:  rgb(128, 112, 112);
     align-items: center;
     justify-content: space-between;
+    padding: 16px 8px;
 }
 body{
     padding: 0;
@@ -42,6 +47,7 @@ body{
     color: rgb(46, 46, 46);
     word-wrap: break-word;
     overflow-wrap:break-word ;
+    
 }
 h1{
  font-weight: 900;
@@ -147,7 +153,7 @@ li a {
         color: #ffffff;
         font-size: 15px;
         padding: 0;
-        margin-right: 25px;
+        padding-right: 25px;
        
         }
 }
