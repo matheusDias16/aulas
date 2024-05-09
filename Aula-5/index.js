@@ -56,22 +56,40 @@ console.log(person.fullName())
 // const obj = { name: "Matheus", age: 18, car: 'Mercedes AMG 640' }
 
 // console.log(JSON.stringify(obj));
-const dados ={
-   nome:"Matheus",
-   sobrenome: "Dias",
-   idade : 18,
-   x:32,
-   y:97,
+// let numero ={
+  
+// }
 
-   calcularNumero: function(){
-   return Math.pow(3,32) / Math.sqrt(97)
-  },  
- 
-    
-    alterarNome: function(){
-      return this.nome  + " " + this.sobrenome + "," + "tenho" + " "+ this.idade + " " + "anos"
+// const dados = {
+//   nome: "Matheus",
+//   sobrenome: "Dias",
+//   idade: 18,
+//   x: 32,
+//   y: 97,
 
-    }
+//   calcularNumero: function () {
+//     return Math.pow(3, 32) / Math.sqrt(97)
+//   },
+  
+
+//   alterarNome: function () {
+//     return this.nome + " " + this.sobrenome + "," + "tenho" + " " + this.idade + " " + "anos" 
+
+//   }
+// }
+
+let x = 1
+let y = 2
+
+function calcularNumero(numero1, numero2) {
+  const numeroFinal = Math.pow( numero1,3) / Math.sqrt(numero2)
+  console.log(numeroFinal);
+  x = numeroFinal;
 }
-console.log("Número final = ", dados.calcularNumero())
-console.log("Response =", dados.alterarNome())
+
+calcularNumero(x, y)
+calcularNumero(x, y)
+calcularNumero(x, y)
+
+// console.log("Número final = ", dados.calcularNumero())
+// console.log("Response =", dados.alterarNome())
