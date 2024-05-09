@@ -45,15 +45,33 @@ console.log(person.fullName())
 
 
 //JavaScript Object Notation
-let json = '{"name":"John", "age":30, "car":null}'
+// let json = '{"name":"John", "age":30, "car":null}'
 
-console.log(json);
-console.log(JSON.parse(json));
+// console.log(json);
+// console.log(JSON.parse(json));
 
-const jsonParsead = JSON.parse(json)
-console.log('Exemplo de acesso ao objeto JSON', jsonParsead.name);
+// const jsonParsead = JSON.parse(json)
+// console.log('Exemplo de acesso ao objeto JSON', jsonParsead.name);
 
-const obj = { name: "Matheus", age: 18, car: 'Mercedes AMG 640' }
+// const obj = { name: "Matheus", age: 18, car: 'Mercedes AMG 640' }
 
-console.log(JSON.stringify(obj));
+// console.log(JSON.stringify(obj));
+const dados ={
+   nome:"Matheus",
+   sobrenome: "Dias",
+   idade : 18,
+   x:32,
+   y:97,
 
+   calcularNumero: function(){
+   return Math.pow(3,32) / Math.sqrt(97)
+  },  
+ 
+    
+    alterarNome: function(){
+      return this.nome  + " " + this.sobrenome + "," + "tenho" + " "+ this.idade + " " + "anos"
+
+    }
+}
+console.log("Número final = ", dados.calcularNumero())
+console.log("Response =", dados.alterarNome())
