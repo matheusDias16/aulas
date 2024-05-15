@@ -144,3 +144,22 @@ function calcularNumero(numero1, numero2) {
 //x = calcularNumero(x, y)
 //x = calcularNumero(x, y)
 
+// const dados = {
+//   nome: "Matheus",
+//   sobrenome: "Dias",
+//   idade: 18,
+//   x: 32,
+//   y: 97,
+
+//   calcularNumero: function () {
+//     return Math.pow(3, 32) / Math.sqrt(97)
+//   },
+  
+
+//   alterarNome: function () {
+//     return this.nome + " " + this.sobrenome + "," + "tenho" + " " + this.idade + " " + "anos" 
+
+//   }
+// }
+// console.log("Número final = ", dados.calcularNumero())
+// console.log("Response =", dados.alterarNome())
