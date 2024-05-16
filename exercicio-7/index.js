@@ -23,9 +23,10 @@
 //         break
 // } 
 
-// let mes = 1;
+
 
 //MESES
+// let mes = 1;
 // switch (mes) {
 //     case 1:
 //         console.log('janeiro');
@@ -65,48 +66,48 @@
 //         break;
 // } 
 
-//DIAS DO MES
-// let dia = "janeiro";
-// switch (dia) {
-//     case "janeiro":
+// DIAS DO MES
+// let mes = 1;
+// switch (mes) {
+//     case 1:
 //         console.log(31);
 //         break;
-//     case "fevereiro":
+//     case 2:
 //         console.log(28);
 //         break;
-//     case "março":
+//     case 3:
 //         console.log(31);
 //         break;
-//     case "abril":
+//     case 4:
 //         console.log(30);
 //         break;
-//     case "maio":
+//     case 5:
 //         console.log(31);
 //         break;
-//         case "junho":
+//         case 6:
 //         console.log(30);
 //         break;
-//         case "julho":
+//         case 7:
 //         console.log(31);
 //         break;
-//         case "agosto":
+//         case 8:
 //         console.log(31);
 //         break;
-//         case "setembro":
+//         case 9:
 //         console.log(30);
 //         break;
-//         case "outubro":
+//         case 10:
 //         console.log(31);
 //         break;
-//         case "novembro":
+//         case 11:
 //         console.log(30);
 //         break;
-//         case "dezembro":
+//         case 12:
 //         console.log(31);
 //         break;
 // } 
 
-//ESTACAO
+// ESTACAO
 // let estacao = 1;
 // switch (estacao) {
 //     case 1:
@@ -123,7 +124,7 @@
 //         break;
 // } 
 
-//NOTA
+// NOTA
 // let nota = 5;
 // switch (nota) {
 //     case 0:
@@ -160,7 +161,7 @@
 //         console.log('excelente');
 //     }
 
-//NUMERO PAR
+// NUMERO PAR
 // var n = 2
 //  while (n < 11) {
 //  if(n % 2 == 0)
@@ -175,19 +176,28 @@
 // }
 
 //FIBONATI
-const num = Number(await IDBObjectStore.ask("Digite numero fibonacci") )
-let soma = 0
-let t1 = 0
-let t2 = 1
 
-for(let i = 0; 1 < num; i++ ){
- soma = ti + t2
-}
+
+// let t1 = 0
+// let t2 = 1
+// let soma = 0
+
+// for(let i = 0; i < 10; i++ ){
+//  soma = t1 + t2
+//  t1 = t2
+//  t2 = soma
+//  console.log(soma)
+// }
 
  //FIGURA
-//   for (let i = "*"; i < 7; i++ ) {
-//      console.log(i);
-   
+//  let astetrisco = "*"
+//   for (let i = 0; i <= 7; i++ ) {
+//     if(i % 2 == 0){
+//         console.log("*");
+//     } else{ 
+//     astetrisco += "*"    
+//     console.log(astetrisco)
+//     }
 //  }
 
 //DECRESCENTE
