@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Formulário maneiro</h1>
+    
+    <form name="signup" >
+      <ul>
+        <li class="inputContainer">
+          <label for="inputNome">Nome:</label>
+          <input id="inputNome" type="text" />
+          <small id="inputNomeValidacao"></small>
+        </li>
+
+        <li class="inputContainer">
+          <label for="inputSobrenome">Sobrenome:</label>
+          <input id="inputSobrenome" type="text" />
+          <small id="inputSobrenomeValidacao"></small>
+        </li>
+
+        <li class="inputContainer">
+          <label for="inputIdade">Idade:</label>
+          <input id="inputIdade" type="number">
+          <small id="inputIdadeValidacao"></small>
+        </li>
+
+        <li>
+          <p>Tamanho de camiseta</p>
+          <section class="radio-section">
+            <div>
+              <input
+                type="radio"
+                name="radioCamiseta"
+                id="tamanhoP"
+                value="P"
+              />
+              <label for="tamanhoP">P</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="radioCamiseta"
+                id="tamanhoM"
+                value="M"
+              />
+              <label for="tamanhoM">M</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="radioCamiseta"
+                id="tamanhoG"
+                value="G"
+              />
+              <label for="tamanhoG">G</label>
+            </div>
+          </section>
+          <small id="radioCamisetaValidacao"></small>
+        </li>
+      </ul>
+
+      <button id="criarUsuario" type="submit">Criar conta</button>
+    </form>
+  </body>
+  <script src="./index.js"></script>
+</html>
