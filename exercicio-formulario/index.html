@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Agenda inteligente</h1>
+  <h2>Informe os dados do paciente</h2>
+  <p>Todas as informações são obrigatórias</p>
+  <form name="cadastro">
+    <ul>
+      <div class="cont">
+        <div class="lado">
+          
+          <div class="idade">
+            <label>Idade</label>
+            <input id="idade" type="number">
+          </div>
+
+          <div class="cep">
+            <label >CEP</label>
+            <input id="cep" type="number">
+          </div>
+        </div>
+
+        <div class="lado">
+          
+          <div class="fonte">
+            <label>Fonte pagante</label>
+            <select name="" id="fonte">
+              <option value="dinheiro">Dinheiro</option>
+              <option value="cartao">Cartão</option>
+              <option value="pix">Pix</option>
+            </select>
+          </div>
+
+          <div class="genero">
+            <label class="gen">Gênero</label>
+            <div class="inputGenero">
+              <input class="bola" type="radio" name="radioGenero" id="radioGeneroM" value="masculino"/>
+              <label class="masculino">Masculino</label>
+              <input class="bola" type="radio" name="radioGenero" id="radioGeneroF" value="feminino" />
+              <label class="feminino">Feminino</label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="lado">
+          <div class="estadoCivil">
+            <label>Estado civil</label>
+            <div class="estado">
+              <input class="bola" type="radio" name="radioEstado" id="radioEstadoSolteiro" value="solteiro" />
+              <label for="radioEstadoSolteiro">Solterio</label>
+              <input class="bola" type="radio" name="radioEstado" id="radioEstadoCasado" value="casado" />
+              <label for="radioEstadoCasado">Casado</label>
+            </div>
+            <div class="estado">
+              <input class="bola" type="radio"  name="radioEstado" id="radioEstadoViuvo" value="viuvo"  />
+              <label for="radioEstadoViuvo">Viuvo </label>
+              <input class="bola" type="radio"  name="radioEstado" id="radioEstadoDivorciado" value="divorciado" />
+              <label for="radioEstadoDivorciado">Divorciado</label>
+            </div>
+            <div class="estado">
+              <input class="bola" type="radio"  name="radioEstado" id="radioEstadoSeparado" value="separado"  />
+              <label for="radioEstadoSeparado" >Separado</label>
+            </div>
+          </div>
+
+          <div class="ocupacao">
+            <p class="ocu">Ocupação</p>
+            <div class="check">
+              <input class="bola" type="checkbox" id="estudante" name="ocupacao" value="estudante" checked />
+              <label for="estudante">Estudante</label>
+            </div>
+
+            <input class="bola" type="checkbox" id="aposentado" name="ocupacao" value="aposentado" checked  />
+            <label for="aposentado">Aposentado</label>
+
+            <div class="check">
+              <input class="bola" type="checkbox" id="outro" name="ocupacao" value="outro" checked />
+              <label for="outro">Outro</label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </ul>
+<div class="btn">
+    <button id="cadastroPaciente" >Avançar</button>
+  </div>
+  </form>
+</body>
+<script src="./script.js"></script>
+
+</html>
+
+<!-- SEPARARA EM TRES QUE ESTAO ALINHADOS -->
