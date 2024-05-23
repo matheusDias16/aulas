@@ -15,11 +15,15 @@ btnCriarUsuario.addEventListener("click", (event) => {
   event.preventDefault()
   
   if (validacaoTelaDeSignup()) {
+    console.log(signupForm.elements);
     
     const payload = {
       nome: signupForm.elements["inputNome"].value.trim().toLowerCase(),
-      sobrenome: signupForm.elements["inputSobrenome"].value.trim().toLowerCase(),
+      sobrenome: signupForm.elements["inputSobrenome"].value
+        .trim()
+        .toLowerCase(),
       idade: signupForm.elements["inputIdade"].value,
+      camiseta: document.querySelector('input[name="radioCamiseta"]:checked').value,
     }
     
     console.log("Dados", payload)
