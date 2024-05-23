@@ -31,7 +31,7 @@ console.log("o contrario é",array.reverse())
 // }
 
 //QUANTAS VEZES CADA UM APARECE 6 
-// let vezes = (ar , value , value2 ) => ar.reduce((acc,item)=>value === item ? acc + 1 : acc ,0 )
+// let vezes = (ar , value ) => ar.reduce((acc,item)=>value === item ? acc + 1 : acc ,0 )
 // console.log(vezes(array, 5 , 1))
 
 //TIRAR OS NUMEROS REPETIDOS 7
@@ -44,9 +44,9 @@ console.log("o contrario é",array.reverse())
 //refazer sem set
 
 //MULTIPLICAR POR PI 8
-let pi = array.map((x) => x * Math.PI);
+// let pi = array.map((x) => x * Math.PI);
 
-console.log(pi)
+// console.log(pi)
 
 //refazer deixando so duas casas decimais
 

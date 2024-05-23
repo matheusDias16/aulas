@@ -69,14 +69,14 @@ console.log(pessoas.filter((item) => item.age < 30)) */
 //console.log(array2.includes(10))
 
 //slice
-/* console.log(array2.slice(2, 5))
-console.log(array2.slice(2))
-console.log(array2.slice(-2)) */
+// console.log(array2.slice(2, 5))
+// console.log(array2.slice(2))
+// console.log(array2.slice(-2))
 
 //splice
-//0 inseri
-/* array.splice(1, 0, array2)
-console.log(array); */
+
+//  array.splice(1, 0, array2)
+// console.log(array); 
 
 //1 substitui
 /* array.splice(3, 1, 'cat')
