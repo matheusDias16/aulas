@@ -10,18 +10,11 @@ let btnCadastroPaciente = document.querySelector('#cadastroPaciente')
     // console.log('aa', document.querySelector('input[name="radioEstado"]:checked'))
     let estado = document.querySelector('input[name="radioEstado"]:checked');
     let genero = document.querySelector('input[name="radioGenero"]:checked');
-    let array = []
     let ocupacao = document.querySelectorAll('input[name="ocupacao"]:checked');
-    if(ocupacao.lenght > 0 ){
-        
-        ocupacao.forEach(item =>{
-        array.push(item.value) 
-
-        })
-    }else{
-        // ocupacao = []
-    }
-    console.log(array);
+    ocupacao = [...ocupacao]
+    ocupacao = ocupacao.map(item => item.value)
+  
+    console.log(ocupacao);
     const payload = {
         idade: cadastroForm.elements["idade"].value,
         cep: cadastroForm.elements["cep"].value,
