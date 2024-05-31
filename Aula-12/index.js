@@ -16,12 +16,11 @@ fetchPromise.then((response) => {
 
 console.log("Started request…") */
 
-
-
 //exemplo 2
 /* const fetchPromise = fetch(
   "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
 ).then((response) => {
+
   response.json().then((data) => {
     console.log(data[0].name)
   })
@@ -57,9 +56,6 @@ fetchPromise
     console.error(`Could not get products: ${error}`)
   }) */
 
-  
-  
-  
 //Exemplo de uso
 /* let uri = "https://rickandmortyapi.com/api"
 let configuracaoRequisicao = {
