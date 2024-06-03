@@ -57,7 +57,7 @@ fetchPromise
   }) */
 
 //Exemplo de uso
-/* let uri = "https://rickandmortyapi.com/api"
+ let uri = "https://rickandmortyapi.com/api"
 let configuracaoRequisicao = {
   method: "GET",
   headers: {
@@ -97,4 +97,4 @@ fetchPromise
   })
   .catch((error) => {
     console.error(`Aconteceu o seguinte erro: ${error}.`)
-  }) */
+  }) 
