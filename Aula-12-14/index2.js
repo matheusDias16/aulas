@@ -26,6 +26,7 @@ function doStep2(init) {
   setTimeout(() => {
     return init + 2
   }, 3000)
+  
 }
 
 function doStep3(init) {
@@ -37,7 +38,7 @@ function doOperation() {
   result = doStep1(result)
 
   //setTimeout(() => {}, 3000)
-  result = doStep2(result)
+  //result = doStep2(result)
 
   result = doStep3(result)
   console.log(`result: ${result}`)
@@ -81,20 +82,21 @@ doOperation() */
 //Promise.all
 //Promise.any
 
-/* const fetchPromise1 = fetch(
+const fetchPromise1 = fetch(
   "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
 )
 const fetchPromise2 = fetch(
   "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/not-found"
 )
-const fetchPromise3 = fetch(
+/* const fetchPromise3 = fetch(
   "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json"
 ) */
 
 /* const fetchPromise3 = fetch(
-  "bad-scheme://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json"
+  "badhjkukhyukhkhjkhjkhj-scheme://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json"
 ) */
 
+  
 /* Promise.all([fetchPromise1, fetchPromise2, fetchPromise3])
   .then((responses) => {
     for (const response of responses) {
@@ -102,10 +104,19 @@ const fetchPromise3 = fetch(
     }
   })
   .catch((error) => {
-    console.error(`Failed to fetch: ${error}`)
+    console.error(`Failed to fetch: => ${error}`)
   }) */
 
 /* Promise.any([fetchPromise1, fetchPromise2, fetchPromise3])
+  .then((response) => {
+    console.log(`${response.url}: ${response.status}`)
+  })
+  .catch((error) => {
+    console.error(`Failed to fetch: ${error}`)
+  }) */
+  
+    //resolvendo 1 promise
+/* Promise.resolve(fetchPromise1)
   .then((response) => {
     console.log(`${response.url}: ${response.status}`)
   })
@@ -117,13 +128,13 @@ const fetchPromise3 = fetch(
   
 //Async / await
   
-async function fetchProducts() {
+/* async function fetchProducts() {
   try {
     // after this line, our function will wait for the `fetch()` call to be settled
     // the `fetch()` call will either return a Response or throw an error
     //Em vez de receber uma promise como resposta, recebe a resposta completa
     const response = await fetch(
-      "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
+      "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/not-found"
     )
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`)
@@ -137,4 +148,4 @@ async function fetchProducts() {
   }
 }
 
-fetchProducts()
+fetchProducts() */
