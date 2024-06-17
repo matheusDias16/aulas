@@ -12,7 +12,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./modules/private/private.module').then((m) => m.PrivateModule),
-    canActivate: [false],
+    //canActivate: [false],
   },
   { path: '**', component: NotFoundComponent },
 ];
