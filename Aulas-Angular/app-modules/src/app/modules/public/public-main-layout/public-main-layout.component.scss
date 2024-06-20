@@ -1,0 +1,29 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+header{
+    background: grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 24px;
+
+    img{
+        width: 310px;
+        height: 59px;
+        cursor: pointer;
+    }
+    .btn{
+        display: flex;
+        gap: 16px;
+        
+        
+        button{
+           border-radius: 12px;
+           background: rgb(116, 22, 116);
+           color: #ffffff;
+           height: 59px;
+           font-size: 20px;
+        }
+    }
+}
