@@ -1,0 +1,132 @@
+.cont{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 20px;
+background-image: url('../../../../assets/roxo.jpg');
+height:800px;
+
+overflow: hidden;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+h1{
+    text-align: center;
+    font-size: 100px;
+    padding-top: 8%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(116, 22, 116);
+}
+h3{
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    padding-top: 40px;
+}
+.txt{
+   display: flex; 
+   flex-direction: column;
+   justify-content: center;
+   width: 100%;
+   
+   h4{
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(116, 22, 116); 
+   padding-left: 300px;
+   padding-right: 300px;
+   
+    
+    
+}   
+h2{
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(116, 22, 116); ;
+}
+}
+.txt2{
+    background-image: url('../../../../assets/roxooo.jpg');
+    background-repeat:no-repeat ;
+   background-size:cover ;
+   height: 250px;
+   overflow: hidden;
+background-repeat: no-repeat;
+background-attachment: fixed;
+   h2{
+    text-align: center;
+    font-size: 80px;
+    padding-top: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(116, 22, 116);
+   }
+
+
+}
+
+h4{
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(116, 22, 116); 
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  li{
+    padding-top: 30px;
+  }
+  .img{
+    display: flex;
+    justify-content: center;
+    img{
+        width: 100px;
+        height: 100px;
+        padding-top: 0px;
+    }
+    .btn{
+padding-top: 20px;
+padding-left: 30px;
+        button{
+            
+            border-radius: 12px;
+            background: rgb(116, 22, 116);
+            color: #ffffff;
+            height: 59px;
+            font-size: 20px;
+        }
+    }
+    }
+    @keyframes seta{
+        0% {
+          left: 0px;    
+        }
+        25% {
+          left: 30px;
+        }
+        50% {
+          left: 0px;
+        }
+        75% {
+          left: 30px;    
+        }
+        100% {    
+          left:0px;
+        }
+      }
+      
+      .seta {
+        position: relative;
+        background-repeat: no-repeat;   
+      
+        animation-name: seta;
+        animation-duration:4s;
+        animation-iteration-count: infinite; 
+      }
+
+  
