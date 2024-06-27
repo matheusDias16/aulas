@@ -1,0 +1,43 @@
+<section>
+    <div class="contLogin" >
+      <div class="header-form">
+      <h1>Crie uma conta no <b><img src="../../../../assets/logo (1).png" alt=""></b> </h1>
+    </div>
+
+      <form > 
+        <div class="contInput">
+            <label>
+              <span>
+               Nome
+              </span>
+              <input type="text" name="name">
+            </label>
+          </div>
+        
+        <div class="contInput">
+          <label>
+            <span>
+              E-mail
+            </span>
+            <input type="email" name="email">
+          </label>
+        </div>
+  
+        <div class="contInput">
+          <label>
+            <span>
+              Senha
+            </span>
+            <input type="password" name="pass">
+          </label>
+        </div>
+      </form>
+  
+      <button class="btn" type="button">
+        Entrar
+      </button>
+  
+      <h6>Já tem uma conta? Entre aqui ! <button class="login" mat-raised-button *ngIf="!this.router.url.includes('/login')" routerLink="/login">Login</button></h6>
+
+    </div>
+  </section>    
