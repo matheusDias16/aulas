@@ -2,17 +2,15 @@
     <div class="contLogin" >
       <div class="header-form">
       <h1>Logar-se ao <b><img src="../../../../assets/logo (1).png" alt=""></b> </h1>
-      <div class="imagem">
-
-      </div>
     </div>
+
       <form >
         <div class="contInput">
           <label>
             <span>
               E-mail
             </span>
-            <input type="text" name="user">
+            <input type="email" name="email">
           </label>
         </div>
   
@@ -26,9 +24,11 @@
         </div>
       </form>
   
-      <button type="button">
+      <button class="btn" type="button">
         Entrar
       </button>
+
+      <h6>Ainda não tem uma conta? crie aqui! <button class="criar" mat-raised-button *ngIf="!this.router.url.includes('/signup')" routerLink="/signup">Inscrever-se</button></h6>
   
       
     </div>
