@@ -6,14 +6,19 @@ import { PublicModule } from './modules/public/public.module';
 import { PrivateModule } from './modules/private/private.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideHttpClient } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, PublicModule, PrivateModule, SharedModule, ],
-  providers: [
-    provideAnimationsAsync()
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    PublicModule,
+    PrivateModule,
+    SharedModule,
   ],
+  providers: [provideAnimationsAsync(), provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
