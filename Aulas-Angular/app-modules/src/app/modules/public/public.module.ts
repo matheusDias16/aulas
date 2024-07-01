@@ -12,10 +12,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, NotFoundComponent, PublicMainLayoutComponent, HomeComponent, SignUpComponent],
+  declarations: [LoginComponent, NotFoundComponent, PublicMainLayoutComponent, HomeComponent, SignUpComponent, ForgotPasswordComponent],
   imports: [CommonModule, PublicRoutingModule,MatInputModule,MatSelectModule,MatFormFieldModule,MatButtonModule],
 })
 export class PublicModule {}

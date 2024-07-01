@@ -22,13 +22,14 @@
             <input type="password" name="pass">
           </label>
         </div>
+         <a  routerLink="/forgotPassword" class="esqueceu">Esqueceu a senha?</a> 
       </form>
   
       <button class="btn" type="button">
         Entrar
       </button>
 
-      <h6>Ainda não tem uma conta? crie aqui! <button class="criar" mat-raised-button *ngIf="!this.router.url.includes('/signup')" routerLink="/signup">Inscrever-se</button></h6>
+      <p class="conta">Ainda não tem uma conta? Crie <a class="criar" *ngIf="!this.router.url.includes('/signup')" routerLink="/signup">aqui</a></p>
   
       
     </div>
