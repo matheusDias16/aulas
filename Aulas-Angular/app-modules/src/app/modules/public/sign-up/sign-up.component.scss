@@ -98,7 +98,7 @@ section {
             margin-top: 24px;
         }
 
-        h6 {
+        p {
              font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
             font-weight: 500;
@@ -108,10 +108,9 @@ section {
 
     .login {
 
-        border-radius: 12px;
-        background: rgb(116, 22, 116);
-        color: #ffffff;
-        height: 59px;
+       
+        color: rgb(116, 22, 116);
+        font-weight: bold;
         font-size: 20px;
     }
 }

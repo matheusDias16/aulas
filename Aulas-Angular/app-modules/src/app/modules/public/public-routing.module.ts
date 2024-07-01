@@ -4,6 +4,7 @@ import { PublicMainLayoutComponent } from './public-main-layout/public-main-layo
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,10 @@ const routes: Routes = [
         path: 'signup',
         component: SignUpComponent,
       },
-   
+      {
+        path: 'forgotPassword',
+        component: ForgotPasswordComponent,
+      },
     ],
   },
 ];
