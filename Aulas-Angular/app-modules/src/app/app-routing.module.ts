@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './modules/public/not-found/not-found.component';
+import { appGuard } from './guards/app.guard';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./modules/private/private.module').then((m) => m.PrivateModule),
-    //canActivate: [false],
+    canActivate: [appGuard],
   },
   { path: '**', component: NotFoundComponent },
 ];

@@ -128,7 +128,7 @@ const fetchPromise2 = fetch(
   
 //Async / await
   
-/* async function fetchProducts() {
+async function fetchProducts() {
   try {
     // after this line, our function will wait for the `fetch()` call to be settled
     // the `fetch()` call will either return a Response or throw an error
@@ -148,4 +148,4 @@ const fetchPromise2 = fetch(
   }
 }
 
-fetchProducts() */
+fetchProducts()

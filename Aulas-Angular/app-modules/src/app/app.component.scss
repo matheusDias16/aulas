@@ -5,3 +5,45 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+:root {
+
+  --primary: #5000A0;
+  --primary-light: #47008d;
+  --primary-dark: #741674;
+  --secondary: #5459EA;
+  --secondary-light: #86A1E1;
+  --secondary-dark: #E67646;
+
+  --white: #ffffff;
+  --blue: #0086D6;
+
+  ---black: #000000;
+  --danger: #FF786F;
+  --invalid: #D32F2F; 
+  --success: #28ba62;
+  --valid: #4BAD42;
+  --warning: #e0ac08;
+  --alert: #FFA000;
+
+  --grey-50: #FAFAFA;
+  --grey-100: #F5F5F5;
+  --grey-200: #EEEEEE;
+  --grey-300: #E0E0E0;
+  --grey-400: #BDBDBD;
+  --grey-500: #9E9E9E;
+  --grey-600: #757575;
+  --grey-700: #616161;
+  --grey-800: #424242;
+  --grey-900: #212121;
+
+  --gradient-to: #100F0F;
+  --gradient-from: #2C2929;
+
+  --input-background: #F8F9FD;
+  --input-label: #2F363DB2;
+  --title: #2F363D;
+  --sub-title: #9E9E9E;
+
+
+}
