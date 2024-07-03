@@ -7,7 +7,7 @@ import { PrivateModule } from './modules/private/private.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
-
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +18,12 @@ import { provideHttpClient } from '@angular/common/http';
     PrivateModule,
     SharedModule,
   ],
-  providers: [provideAnimationsAsync(), provideHttpClient()],
+  providers: [
+    provideAnimationsAsync(),
+    provideHttpClient(),
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
