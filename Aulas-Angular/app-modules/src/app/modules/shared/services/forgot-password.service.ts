@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from '../../../../environments/environment'; 
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 export type TForgotPassword = {
 email : string
@@ -9,12 +10,15 @@ email : string
 
 export type TAlteraPassword = {
   email : string
-  password:string
-  token: string
+  password?:string
+  token?: string
 
   } 
 //criar outro type com email, senha, token todos string
 
+export type TRequestToken = {
+  msg: string
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -31,8 +35,8 @@ export class ForgotPasswordService {
     
   ) {}
 
-  public forgotPassword(payload:TForgotPassword) {
-    return this.http.post(
+  public forgotPassword(payload:TForgotPassword): Observable<TRequestToken> {
+    return this.http.post<TRequestToken>(
       `${apiUrl}/auth/forgot_password`,
       payload,
       { headers: this.header }
