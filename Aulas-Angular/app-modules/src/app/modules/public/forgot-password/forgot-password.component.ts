@@ -62,6 +62,11 @@ export class ForgotPasswordComponent implements OnInit {
         },
         error: (error) => {
           console.error(error);
+          swal({
+            title: "Token não enviado!",
+            text: error.msg || 'Token não enviado, tente enviar o email novamente',
+            icon: "error",
+          });
           //Caso de erro emitir um alert com icone de erro avisando o usuário para reenviar o email
           //https://sweetalert.js.org/docs/
         }
@@ -82,22 +87,32 @@ export class ForgotPasswordComponent implements OnInit {
     if (formValid) {
       console.log("Form emitiu dados", this.formGetPasswordFormGroup.value);
 
-      /* const payload: TAlteraPassword = {
-        email: "a.pedreschi32@gmail.com",
-        token: "2e92292ace91fd0eaf41bf0536280f5cd6c27018",
-        password: "12345678"
+       const payload: TAlteraPassword = {
+        email: this.formGetPasswordFormGroup.value.email,
+        token: this.formGetPasswordFormGroup.value.token,
+        password: this.formGetPasswordFormGroup.value.senha
       };
 
       this.forgotPasswordService.trocaPassword(payload).subscribe({
         next: (success) => {
-          console.log(success);
+          swal({
+            title: "Senha alterada",
+            text: 'Sua senha foi alterada com sucesso',
+            icon: "success",
+          });  
           this.router.navigate(['/login'])
+          
 
         },
         error: (error) => {
           console.error(error)
+          swal({
+            title: "Erro ao alterar a senha!",
+            text: error.msg || 'Ocorreu um erro ao alterar a sua senha, tente novamente',
+            icon: "error",
+          });
         }
-      }); */
+      }); 
 
     } else {
       this.formGetPasswordFormGroup.markAllAsTouched();

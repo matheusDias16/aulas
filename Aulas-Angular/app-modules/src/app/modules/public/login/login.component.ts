@@ -1,7 +1,13 @@
 import { AuthService } from './../../shared/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup,Validators } from '@angular/forms';
 
+type Tform = {
+  email: FormControl<string | null>,
+  senha: FormControl<string | null>,
+  
+}
 
 @Component({
   selector: 'app-login',
@@ -11,12 +17,21 @@ import { Router } from '@angular/router';
   
   
 export class LoginComponent implements OnInit {
+  public formLogin!: FormGroup<Tform>
+
   constructor(
     public router: Router,
     private authService: AuthService
   ) { }
   ngOnInit(): void {
+    this.createForm();
+  }
 
+  createForm() {
+    this.formLogin = new FormGroup<Tform>({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      senha : new FormControl('', [Validators.required])
+    })
   }
 
   login() {

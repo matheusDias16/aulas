@@ -9,11 +9,12 @@ email : string
 } 
 
 export type TAlteraPassword = {
-  email : string
-  password?:string
-  token?: string
-
+  email : string | null | undefined
+  password?:string | null | undefined
+  token?: string | null | undefined
   } 
+
+
 //criar outro type com email, senha, token todos string
 
 export type TRequestToken = {
@@ -51,5 +52,6 @@ export class ForgotPasswordService {
     );
   }
 
+  
   //outra funcao troca senha
 }

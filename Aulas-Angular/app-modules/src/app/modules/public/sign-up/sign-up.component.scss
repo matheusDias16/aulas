@@ -1,6 +1,6 @@
 section {
     background-image: url('../../../../assets/roxooo.jpg');
-    height: 890px;
+    height: 890px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,10 +8,9 @@ section {
     background-size: cover;
 
     .contLogin {
-        
-        margin-top: 8%;
+        margin-top: 8%; 
         background-color: #ffffff;
-        width: 35%;
+        width: 35%; 
         border-radius: 30px;
         padding: 40px 30px;
         display: flex;
@@ -30,8 +29,8 @@ section {
                 text-align: center;
                 font-size: 48px;
                 font-weight: 600;
-                line-height: 28px;
-                letter-spacing: 0em;
+                line-height: 1.2;
+                letter-spacing: 0;
 
                 b {
                     img {
@@ -50,13 +49,12 @@ section {
                 gap: 8px;
                 flex-direction: column;
 
-
                 span {
                     font-family: Arial, Helvetica, sans-serif;
                     font-size: 20px;
                     font-weight: 500;
-                    line-height: 23px;
-                    letter-spacing: 0em;
+                    line-height: 1.15;
+                    letter-spacing: 0;
                     text-align: left;
                     margin-top: 24px;
                 }
@@ -64,18 +62,15 @@ section {
                 input {
                     display: block;
                     padding: 15px 20px;
-
-
-                    width: calc(100% - 40px);
+                    width: 100%; 
                     border: 1px solid rgb(116, 22, 116);
                     border-radius: 20px;
                     font-family: Inter;
                     font-size: 20px;
-                    font-weight: 250;
-                    line-height: 20px;
-                    letter-spacing: 0em;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    letter-spacing: 0;
                     outline: none;
-
                     background-size: cover;
                 }
             }
@@ -99,7 +94,7 @@ section {
         }
 
         p {
-             font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 20px;
             font-weight: 500;
             text-align: center;
@@ -107,10 +102,56 @@ section {
     }
 
     .login {
-
-       
         color: rgb(116, 22, 116);
         font-weight: bold;
         font-size: 20px;
+    }
+
+
+
+
+    @media screen and (max-width: 768px) {
+        section {
+            height: auto;
+            padding: 2rem 0; 
+        }
+
+        .contLogin {
+            width: 80%; 
+            margin-top: 16px;
+            padding: 20px; 
+        }
+
+        .header-form {
+            h1 {
+                font-size: 36px; 
+                b{
+                   img{
+                    max-width: 350px;
+                   } 
+                }
+            }
+        }
+
+        .contInput {
+            label {
+                span {
+                    font-size: 18px; 
+                }
+
+                input {
+                    font-size: 18px;
+                    max-width: 85%; 
+                }
+            }
+        }
+
+        .btn {
+            font-size: 20px; 
+        }
+
+        p {
+            font-size: 18px; 
+        }
     }
 }

@@ -8,6 +8,13 @@ type TUser = {
   email: string,
   password: string
 }
+
+export type TcriaUsuario = {
+  email : string
+  password:string
+  name:string
+}
+
 type TUserResponse = {
   user: {
     _id: string,
@@ -39,6 +46,14 @@ export class AuthService {
     return this.http.post<TUserResponse>(
       `${apiUrl}/auth/authenticate`,
       credentials,
+      { headers: this.header }
+    );
+  }
+
+  public criaUsuario(payload:TcriaUsuario) {
+    return this.http.post(
+      `${apiUrl}/auth/register`,
+      payload,
       { headers: this.header }
     );
   }
