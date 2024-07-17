@@ -34,10 +34,13 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  
   login() {
+    // const formValid = this.formLogin.status === 'INVALID' ? false : true;
+    // if(formValid){
     const payload = {
-      email: 'a.pedreschi34@gmail.com',
-      password: '12345',
+       email: this.formLogin.value.email!,
+       password: this.formLogin.value.senha!,
     };
 
     this.authService.authenticate(payload).subscribe({
@@ -48,11 +51,13 @@ export class LoginComponent implements OnInit {
           'accessToken',
           JSON.stringify(success.token)
         );
+        localStorage.setItem('user', JSON.stringify(success.user))
         this.router.navigate(['/user'])
       },
       error: (error) => { }
 
     });
-  }
+  // }
+}
   
 }
