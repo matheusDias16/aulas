@@ -8,12 +8,25 @@ type TUser = {
   email: string,
   password: string
 }
+export type TRequestResponse = {
+  msg: string
+}
 
 export type TcriaUsuario = {
   email : string
   password:string
   name:string
 }
+export type TForgotPassword = {
+  email : string
+  } 
+  
+  export type TAlteraPassword = {
+    email : string | null | undefined
+    password?:string | null | undefined
+    token?: string | null | undefined
+    } 
+  
 
 type TUserResponse = {
   user: {
@@ -53,6 +66,22 @@ export class AuthService {
   public criaUsuario(payload:TcriaUsuario) {
     return this.http.post(
       `${apiUrl}/auth/register`,
+      payload,
+      { headers: this.header }
+    );
+  }
+
+  public forgotPassword(payload:TForgotPassword): Observable<TRequestResponse> {
+    return this.http.post<TRequestResponse>(
+      `${apiUrl}/auth/forgot_password`,
+      payload,
+      { headers: this.header }
+    );
+  }
+
+  public trocaPassword(payload:TAlteraPassword): Observable<TRequestResponse> {
+    return this.http.post<TRequestResponse>(
+      `${apiUrl}/auth/reset_password`,
       payload,
       { headers: this.header }
     );

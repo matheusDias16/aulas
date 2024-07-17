@@ -1,5 +1,5 @@
 import { Component, NgModule, OnInit } from '@angular/core';
-import { ForgotPasswordService, TForgotPassword, TAlteraPassword } from '../../shared/services/forgot-password.service';
+import { AuthService, TForgotPassword, TAlteraPassword } from '../../shared/services/auth.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import swal from 'sweetalert';
@@ -24,7 +24,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   constructor(
     public router: Router,
-    private forgotPasswordService: ForgotPasswordService,
+    private authService: AuthService,
   ) { }
 
 
@@ -49,7 +49,7 @@ export class ForgotPasswordComponent implements OnInit {
       };
 
       
-      this.forgotPasswordService.forgotPassword(payload).subscribe({
+      this.authService.forgotPassword(payload).subscribe({
         next: (success) => {
           swal({
             title: "Token enviado!",
@@ -93,7 +93,7 @@ export class ForgotPasswordComponent implements OnInit {
         password: this.formGetPasswordFormGroup.value.senha
       };
 
-      this.forgotPasswordService.trocaPassword(payload).subscribe({
+      this.authService.trocaPassword(payload).subscribe({
         next: (success) => {
           swal({
             title: "Senha alterada",
