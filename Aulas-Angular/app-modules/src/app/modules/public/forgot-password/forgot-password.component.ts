@@ -93,7 +93,7 @@ export class ForgotPasswordComponent implements OnInit {
         password: this.formGetPasswordFormGroup.value.senha
       };
 
-      this.forgotPasswordService.trocaPassword(payload).subscribe({
+      /* this.forgotPasswordService.trocaPassword(payload).subscribe({
         next: (success) => {
           swal({
             title: "Senha alterada",
@@ -112,7 +112,7 @@ export class ForgotPasswordComponent implements OnInit {
             icon: "error",
           });
         }
-      }); 
+      });  */
 
     } else {
       this.formGetPasswordFormGroup.markAllAsTouched();

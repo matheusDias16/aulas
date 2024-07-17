@@ -5,7 +5,7 @@ import { PrivateMainLayoutComponent } from './private-main-layout/private-main-l
 import { UserAreaComponent } from './user-area/user-area.component';
 import { SharedModule } from '../shared/shared.module';
 
-
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -13,6 +13,6 @@ import { SharedModule } from '../shared/shared.module';
     PrivateMainLayoutComponent,
     UserAreaComponent,
   ],
-  imports: [CommonModule, PrivateRoutingModule, SharedModule],
+  imports: [CommonModule, PrivateRoutingModule, SharedModule, MatTableModule],
 })
 export class PrivateModule {}

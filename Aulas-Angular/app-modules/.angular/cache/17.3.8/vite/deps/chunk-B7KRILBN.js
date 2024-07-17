@@ -5007,6 +5007,7 @@ export {
   hasModifierKey,
   coerceBooleanProperty,
   coerceNumberProperty,
+  _isNumberValue,
   coerceArray,
   coerceCssPixelValue,
   coerceElement,
@@ -5031,4 +5032,4 @@ export {
   MatOptionModule,
   MatRippleLoader
 };
-//# sourceMappingURL=chunk-FXD4GPKX.js.map
+//# sourceMappingURL=chunk-B7KRILBN.js.map

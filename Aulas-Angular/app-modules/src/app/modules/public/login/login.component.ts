@@ -48,6 +48,8 @@ export class LoginComponent implements OnInit {
           'accessToken',
           JSON.stringify(success.token)
         );
+        
+        localStorage.setItem('user', JSON.stringify(success.user))
         this.router.navigate(['/user'])
       },
       error: (error) => { }
