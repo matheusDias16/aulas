@@ -15,18 +15,6 @@ export interface PeriodicElement {
   symbol: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
 
 @Component({
   selector: 'app-user-area',
@@ -34,13 +22,24 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrl: './user-area.component.scss'
 })
 export class UserAreaComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['position', 'project', 'task', 'action'];
   public projects: Tproject[] = []
-  
+
   constructor(
     private projectService: ProjectService
-  ) { }
+  ) {
+    //Implementar o dialog do material
+    //Criar método para deletar projeto no service
+    //integrar método de deletar project no método deleteProject()
+    
+    //Criar um componente com o nome 'project-area'
+    //Alterar a rota interna do private.routting para adicionar esse componente com a rota '/project-area'
+    //Fazer as tratativas para poder enviar dados por parametrô nas url
+    //Ao clicar no botão de visualizar, redirecionar para a tela para a tela 'Project-Area', passando o id como query param na url
+    
+    //Estilizar a tabela comforme o figma
+    
+   }
 
   ngOnInit(): void {
     this.getProjects()
@@ -52,11 +51,32 @@ export class UserAreaComponent implements OnInit {
       const parsedUser: TUser = JSON.parse(user)
       this.projectService.getProgectsByUser(parsedUser._id).subscribe({
         next: (sucess) => {
-          this.projects = sucess.projects
-          console.log(sucess);
+
+          this.projects = sucess.projects.map((project, index) =>
+          ({
+            ...project,
+            position: index + 1,
+            completedTasks: project.tasks.reduce((acc, currentValue) => acc + (currentValue.completed === true ? 1 : 0)  , 0)
+          }))
+
+          console.log(this.projects);
         },
         error: (error) => { }
       })
     }
   }
+  
+  openModal(data: string) {
+    console.log('dados recebidos no modal: ', data);
+    //Fazer toda a implementação do dialog para abrir aqui
+  }
+  
+  deleteProject(idProject: string): void {
+    console.log('Deletar projeto: ', idProject);
+    
+    //esse método deve ser invocado caso o usuário clique em 'excluir' no modal de confirmação
+    //criar método no service para deletar os projects
+    //integrar o método e deletar o project selecionado
+  }
+  
 }
