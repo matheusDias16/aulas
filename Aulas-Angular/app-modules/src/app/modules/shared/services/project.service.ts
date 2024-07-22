@@ -44,4 +44,10 @@ export class ProjectService {
       { headers: this.header }
     );
   }
+  public deldeteProgectsByUser(userId: string): Observable<{ projects: Tproject[] }> {
+    return this.http.delete<{ projects: Tproject[] }>(
+      `${apiUrl}/projects?userId=${userId}`,
+      { headers: this.header }
+    );
+  }
 }

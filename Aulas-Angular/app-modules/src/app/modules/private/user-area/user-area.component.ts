@@ -22,22 +22,25 @@ export interface PeriodicElement {
   styleUrl: './user-area.component.scss'
 })
 export class UserAreaComponent implements OnInit {
+  idDaUrl : number = 0
+  modalAberto: boolean = false
   displayedColumns: string[] = ['position', 'project', 'task', 'action'];
   public projects: Tproject[] = []
 
   constructor(
-    private projectService: ProjectService
-  ) {
-    //Implementar o dialog do material
-    //Criar método para deletar projeto no service
-    //integrar método de deletar project no método deleteProject()
+    private projectService: ProjectService,
     
-    //Criar um componente com o nome 'project-area'
-    //Alterar a rota interna do private.routting para adicionar esse componente com a rota '/project-area'
+  ) {
+    //Implementar o dialog do material 
+    //Criar método para deletar projeto no service ok
+    //integrar método de deletar project no método deleteProject() ok?
+    
+    //Criar um componente com o nome 'project-area' ok
+    //Alterar a rota interna do private.routting para adicionar esse componente com a rota '/project-area' ok
     //Fazer as tratativas para poder enviar dados por parametrô nas url
     //Ao clicar no botão de visualizar, redirecionar para a tela para a tela 'Project-Area', passando o id como query param na url
     
-    //Estilizar a tabela comforme o figma
+    //Estilizar a tabela comforme o figma ok
     
    }
 
@@ -65,15 +68,17 @@ export class UserAreaComponent implements OnInit {
       })
     }
   }
+ openModal(data: string): void {
+      this.modalAberto = true
+    }
   
-  openModal(data: string) {
-    console.log('dados recebidos no modal: ', data);
-    //Fazer toda a implementação do dialog para abrir aqui
+  fechaModal(): void {
+    this.modalAberto = false
   }
   
   deleteProject(idProject: string): void {
-    console.log('Deletar projeto: ', idProject);
-    
+      this.projectService.deldeteProgectsByUser(idProject).subscribe({
+      })
     //esse método deve ser invocado caso o usuário clique em 'excluir' no modal de confirmação
     //criar método no service para deletar os projects
     //integrar o método e deletar o project selecionado
