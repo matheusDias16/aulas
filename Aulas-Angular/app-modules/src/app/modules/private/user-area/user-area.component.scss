@@ -1,0 +1,201 @@
+.cont{
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    height: 100vh;
+    padding: 20px 36px 0 36px;
+}
+.novo {
+    text-align: end;
+    margin-right: 30px;
+    display: flex;
+    justify-content: end;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    button {
+        display: flex;
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        border: 2px solid #545776;
+        width: 216px;
+        height: 68px;
+        text-align: center;
+        border-radius: 34px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+    }
+}
+table{
+    border: 4px solid #545776;
+    border-radius: 24px;
+}
+th {
+
+    background: #AB6EED4D;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    border-bottom: 2px solid #545776;
+    
+
+}
+
+.posi {
+    width: 10%;
+    text-align: center;
+    border-right: 2px solid #545776;
+    border-radius: 24px 0 0 0;
+
+}
+//.mat-mdc-table
+.tsk {
+    width: 10%;
+    text-align: center;
+    border-right: 2px solid #545776;
+
+}
+
+.acao {
+    width: 10%;
+    text-align: center;
+    border-right: 2px solid #545776;
+    border-radius: 0 24px 0 0;
+}
+
+.proj {
+    width: 60%;
+    text-align: center;
+    border-right: 2px solid #545776;
+
+
+}
+
+td {
+    padding-left: 5px;
+    border-right: 2px solid #545776;
+    border-bottom: 2px solid #545776;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.row {
+    text-align: center;
+    &:first-of-type{
+        border-radius: 0 0 0 24px;
+    }
+}
+tbody{
+    tr{
+        &:last-of-type{
+            background-color: red;
+        }
+    }    
+}
+
+button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+
+}
+
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px 3px #0000001A;
+    border: none;
+
+    h1 {
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        text-align: left;
+
+    }
+
+    p {
+        font-family: Poppins;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 18px;
+        text-align: left;
+
+    }
+
+    .btn {
+        display: flex;
+        justify-content: end;
+        gap: 10px;
+
+        button {
+            border: 1px solid #545776;
+            font-family: Poppins;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 21px;
+            text-align: center;
+
+            padding: 8px;
+            width: 100px;
+        }
+
+        .cancelar {
+            border-radius: 12px;
+
+            color: #545776;
+
+        }
+
+        .delete {
+            background: #AB6EED;
+            color: white;
+            border-radius: 12px;
+            border: none;
+
+
+
+        }
+
+
+    }
+}
+
+
+//   .close {
+//     color: #aaa;
+//     float: right;
+//     font-size: 28px;
+//     font-weight: bold;
+//   }
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
