@@ -1,0 +1,46 @@
+:host {
+  body {
+    width: 380px;
+    max-width: 100%;
+    margin: 0;
+    padding: 22px 0 0;
+    box-shadow: 0 2px 6px 0 #0000001a;
+
+    .content {
+      margin: 12px 0;
+      padding: 22px 0 0;
+      border-top: 1px solid #2f363d1a;
+    }
+
+    h2,
+    p {
+      padding: 0 22px;
+      text-align: left;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      color: var(--title);
+      font-family: var(--font-semibold);
+    }
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+      color: var(--sub-title);
+    }
+  }
+
+  .mat-mdc-dialog-actions {
+    padding: 0 22px 22px;
+    justify-content: flex-end !important;
+    display: flex;
+    align-items: center;
+
+    button {
+      width: 90px;
+    }
+  }
+}

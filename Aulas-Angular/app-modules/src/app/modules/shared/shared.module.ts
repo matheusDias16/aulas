@@ -12,6 +12,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { InputErrorMessageComponent } from './components/input-error-message/input-error-message.component';
 import { CpfDirective } from './directives/cpf.directive';
 import { UpperCasePipe } from './pipes/upper-case.pipe';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   //Declara os componentes que pertencem a esse module
@@ -28,7 +30,7 @@ import { UpperCasePipe } from './pipes/upper-case.pipe';
     UpperCasePipe,
   ],
   // importa tudo que precisa para os componentes desse module funcionar
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatFormFieldModule,],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatDialogModule, MatDividerModule],
   //exportas os componentes criados para poder ser usado em outros lugares da aplicação
   exports: [
     ModalDeleteComponent,
