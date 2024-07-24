@@ -1,0 +1,50 @@
+<body>
+  <div class="title">
+    <h2>{{ title }}</h2>
+  
+    <div class="content">
+      <p [innerHTML]="message"></p>
+    </div>
+  </div>
+    
+
+<form [formGroup]="formProject">
+<!-- USAR MAT LABEL MAT INPUT PARA ACABAR AMANHA -->
+ <div class="cont"> 
+
+<mat-form-field >
+  <div class="coluna">
+    <mat-label>
+      <span>  Nome do projeto</span>
+      </mat-label>
+    <input class="nome" type="text"  formControlName="title">
+  
+    <mat-label>
+      <span > Descrição</span>
+      </mat-label>
+    <input class="desc" type="text"  formControlName="description">
+  </div>
+
+</mat-form-field>
+<div class="task">
+  <mat-label>
+    <span >Tasks</span>
+    </mat-label>
+    <div class="img">
+  <input class="nome" type="text"  formControlName="description">
+  <img src="../../../../../assets/add-36.png" alt="">
+</div>
+</div>
+</div>
+
+</form>
+<mat-dialog-actions>
+  <div class="btn">
+  <button
+    mat-button
+    (click)="create()"
+  >Salvar
+  </button>
+  
+</div>
+</mat-dialog-actions>

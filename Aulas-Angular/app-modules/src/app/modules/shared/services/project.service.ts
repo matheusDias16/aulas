@@ -3,6 +3,18 @@ import { Injectable } from '@angular/core';
 import { apiUrl } from '../../../../environments/environment';
 import { Observable } from 'rxjs';
 
+export type TCriaProject = {
+  
+    title: string
+    description: string
+    // tasks: [TTask]
+  
+}
+
+export type TTask = {
+  title: string
+  assignedTo: string
+}
 
  export type Tproject = {
 _id: string,
@@ -44,9 +56,15 @@ export class ProjectService {
       { headers: this.header }
     );
   }
-  public deldeteProgectsByUser(projectId: string) {
+  public deleteProgectsByUser(projectId: string) {
     return this.http.delete(
       `${apiUrl}/projects/${projectId}`,
+      { headers: this.header }
+    );
+  }
+  public createProjects(payload:TCriaProject){
+    return this.http.post(
+      `${apiUrl}/projects`,payload,
       { headers: this.header }
     );
   }

@@ -1,0 +1,133 @@
+:host {
+  body {
+    width: 802px;
+    max-width: 100%;
+    height: 552px;
+    padding: 22px 0 0;
+    box-shadow: 0 2px 6px 0 #0000001a;
+
+    .title {
+      .content {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+        color: rgb(179, 162, 162);
+      }
+
+      h2 {
+
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: 700;
+
+        text-align: left;
+        color: #545776;
+      }
+    }
+
+    h2,
+    p {
+      padding: 0 22px;
+      text-align: left;
+    }
+
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+      color: var(--sub-title);
+    }
+  }
+}
+
+.cont {
+  padding: 0 22px 22px;
+  display: flex;
+  gap: 200px;
+  align-items: center;
+
+  .coluna {
+    display: flex;
+    flex-direction: column;
+  }
+
+  span {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    color: #545776;
+  }
+
+  input {
+    background: #94BBE91A;
+    border: 1px solid #94BBE94D;
+    border-radius: 8px;
+  }
+
+  .nome {
+    width: 200px;
+    height: 30px;
+  }
+
+  .desc {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 230px;
+
+  .nome {
+    width: 200px;
+    height: 30px;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  button {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: center;
+    cursor: pointer;
+
+    background: #AB6EED;
+    color: white;
+
+    width:340px;
+    height:40px;
+    border-radius: 24px ;
+    margin-left: 200px;
+    border: none;
+
+  }
+
+  .outline-light {
+    background: white;
+
+    color: #545776;
+  }
+
+  .delete {
+    background: #ab6eed;
+    color: white;
+    border: none;
+  }
+}

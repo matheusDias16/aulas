@@ -8,13 +8,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarrinhoComponent } from './components/rxjs/carrinho/carrinho.component';
 import { SwitchMapComponent } from './components/rxjs/switch-map/switch-map.component';
 import { FormsComponent } from './components/forms/forms.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { InputErrorMessageComponent } from './components/input-error-message/input-error-message.component';
 import { CpfDirective } from './directives/cpf.directive';
 import { UpperCasePipe } from './pipes/upper-case.pipe';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
-
+import { ModalCreateComponent } from './components/modal-create/modal-create.component';
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
   //Declara os componentes que pertencem a esse module
   declarations: [
@@ -28,9 +29,10 @@ import { MatDividerModule } from '@angular/material/divider';
     InputErrorMessageComponent,
     CpfDirective,
     UpperCasePipe,
+    ModalCreateComponent,
   ],
   // importa tudo que precisa para os componentes desse module funcionar
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatDialogModule, MatDividerModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatDialogModule,MatInputModule,MatLabel, MatDividerModule],
   //exportas os componentes criados para poder ser usado em outros lugares da aplicação
   exports: [
     ModalDeleteComponent,
