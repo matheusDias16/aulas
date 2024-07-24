@@ -69,7 +69,11 @@ export class SignUpComponent implements OnInit{
       })
       
     } else {
-      console.log('Preencha o formulário corretamente!')
+      swal({
+        title: "Atenção aos dados do formulário",
+        text: 'Preencha o formulário corretamente!',
+        icon: "error",
+      });
     }
   }
   

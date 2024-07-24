@@ -17,7 +17,6 @@
       }
 
       h2 {
-
         font-family: Poppins;
         font-size: 24px;
         font-weight: 700;
@@ -33,7 +32,6 @@
       text-align: left;
     }
 
-
     p {
       font-size: 0.9rem;
       line-height: 1.4rem;
@@ -45,53 +43,61 @@
 .cont {
   padding: 0 22px 22px;
   display: flex;
-  gap: 200px;
-  align-items: center;
+  gap: 24px;
+  //align-items: center;
 
   .coluna {
     display: flex;
     flex-direction: column;
   }
 
-  span {
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    text-align: left;
-    color: #545776;
-  }
+  .form-field {
+    display: flex;
+    flex-direction: column;
 
-  input {
-    background: #94BBE91A;
-    border: 1px solid #94BBE94D;
-    border-radius: 8px;
-  }
+    label {
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: left;
+      color: #545776;
+    }
 
-  .nome {
-    width: 200px;
-    height: 30px;
-  }
+    .nome {
+      background: #94bbe91a;
+      border: 1px solid #94bbe94d;
+      border-radius: 8px;
+      width: 200px;
+      height: 30px;
+    }
 
-  .desc {
-    width: 200px;
-    height: 200px;
-  }
-}
+    .desc {
+      background: #94bbe91a;
+      border: 1px solid #94bbe94d;
+      border-radius: 8px;
+      width: 200px;
+      height: 200px;
+    }
 
-.task {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 230px;
+    .task-field {
+      display: flex;
+      align-items: center;
+      
+      .nome {
+        width: 200px;
+        height: 30px;
+        padding-left: 20px;
+      }
 
-  .nome {
-    width: 200px;
-    height: 30px;
-  }
-
-  img {
-    width: 30px;
-    height: 30px;
+      img {
+        width: 24px;
+        height: 24px;
+        position: relative;
+        left: -34px;
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -108,15 +114,14 @@
     text-align: center;
     cursor: pointer;
 
-    background: #AB6EED;
+    background: #ab6eed;
     color: white;
 
-    width:340px;
-    height:40px;
-    border-radius: 24px ;
+    width: 340px;
+    height: 40px;
+    border-radius: 24px;
     margin-left: 200px;
     border: none;
-
   }
 
   .outline-light {

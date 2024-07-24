@@ -1,11 +1,13 @@
-import { Component, Inject, OnInit } from '@angular/core'
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'
-import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core'
+import { MatDialogRef } from '@angular/material/dialog'
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ProjectService, TCriaProject, TTask } from '../../services/project.service';
+import swal from 'sweetalert';
 
 type TProject = {
-  title: FormControl<string |null>,
-  description: FormControl<string|null>,
-  // tasks : FormControl<string|null>,
+  title: FormControl<string | null>,
+  description: FormControl<string | null>,
+  tasks: FormControl<TTask[] |null>,
 
 }
 
@@ -14,18 +16,17 @@ type TProject = {
   templateUrl: './modal-create.component.html',
   styleUrl: './modal-create.component.scss'
 })
-export class ModalCreateComponent implements OnInit{
+  
+export class ModalCreateComponent implements OnInit {
   public formProject!: FormGroup<TProject>
-  title: string; 
-  message: string;
+  public lista = ['']
+  public input: string = '';
   
   constructor(
     private dialogRef: MatDialogRef<ModalCreateComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) {
-    this.title = data.title;
-    this.message = data.message;
-  }
+    private projectService: ProjectService,
+  ) { }
+  
   ngOnInit(): void {
     this.createForm()
   }
@@ -33,12 +34,56 @@ export class ModalCreateComponent implements OnInit{
   createForm() {
     this.formProject = new FormGroup<TProject>({
       title: new FormControl('', [Validators.required,]),
-      description : new FormControl('', [Validators.required,]),
-      // tasks :  new FormControl('', [Validators.required,]),
+      description: new FormControl('', [Validators.required,]),
+      tasks :  new FormControl([], [Validators.required,]),
     })
-   }   
+  }
 
-  create(){
-    this.dialogRef.close(true)
+  addTask() {
+    console.log(this.input);
+    
+    this.lista.push(this.input)
+  }
+  
+  checkFormValidity() {
+    const formValid = this.formProject.status === 'INVALID' ? false : true;
+    const formTouched = this.formProject.touched;
+    const buttonDisabled = !formValid && formTouched ? true : false;
+
+    return buttonDisabled;
+  }
+  
+  createProject() {
+    const formValid = this.formProject.status === 'INVALID' ? false : true;
+    
+    if (formValid) {
+      
+      const payload: TCriaProject = {
+        title: this.formProject.value.title!,
+        description: this.formProject.value.description!,
+        tasks: this.formProject.value.tasks!,
+      }
+      
+      this.projectService.createProjects(payload).subscribe({
+        next: (sucess) => {
+          console.log('retorno', sucess);
+              
+         
+          this.dialogRef.close(payload);
+        },
+        error: (error) => {
+          console.error(error)
+        }
+      })
+      
+      
+      
+     } else {
+      swal({
+        title: "Atenção aos dados do formulário",
+        text: 'Preencha o formulário corretamente!',
+        icon: "error",
+      });
+    }
   }
 }
