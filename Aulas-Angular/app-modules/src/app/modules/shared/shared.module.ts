@@ -15,7 +15,7 @@ import { UpperCasePipe } from './pipes/upper-case.pipe';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { ModalCreateComponent } from './components/modal-create/modal-create.component';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   //Declara os componentes que pertencem a esse module
   declarations: [
