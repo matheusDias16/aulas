@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core'
 import { MatDialogRef } from '@angular/material/dialog'
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProjectService, TCriaProject, TTask } from '../../services/project.service';
 import swal from 'sweetalert';
+import { TUserSingle } from '../../services/auth.service'
 
 type TProject = {
-  title: FormControl<string | null>,
+  projectName: FormControl<string | null>,
   description: FormControl<string | null>,
-  tasks: FormControl<TTask[] |null>,
+  tasks: FormArray,
 
 }
 
@@ -19,38 +20,55 @@ type TProject = {
   
 export class ModalCreateComponent implements OnInit {
   public formProject!: FormGroup<TProject>
-  public lista = ['']
-  public input: string = '';
   
   constructor(
     private dialogRef: MatDialogRef<ModalCreateComponent>,
     private projectService: ProjectService,
+    private fb: FormBuilder,
   ) { }
   
   ngOnInit(): void {
     this.createForm()
   }
-
-  createForm() {
-    this.formProject = new FormGroup<TProject>({
-      title: new FormControl('', [Validators.required,]),
-      description: new FormControl('', [Validators.required,]),
-      tasks :  new FormControl([], [Validators.required,]),
+  
+  createForm() {    
+    this.formProject = this.fb.group({
+      projectName: this.fb.control('', [Validators.required]),
+      description: this.fb.control('', [Validators.required]),
+      tasks: this.fb.array([], Validators.required),
     })
+    const task = this.fb.group({
+      title: ['', Validators.required],
+    })
+    this.tasks.push(task)
   }
 
-  addTask() {
-    console.log(this.input);
+  get tasks(): FormArray {
+    return this.formProject.get('tasks') as FormArray;
+  }
+
+  removeTask(index: number) {
+    this.tasks.removeAt(index);
+  }
+  
+  addTask(index: number) {    
     
-    this.lista.push(this.input)
+    if (this.tasks.value[index].title.length <= 3) {      
+      return
+    }
+    
+    const task = this.fb.group({
+      title: ['', Validators.required],
+    })
+    this.tasks.push(task)
   }
   
   checkFormValidity() {
-    const formValid = this.formProject.status === 'INVALID' ? false : true;
+    const formValid = this.formProject.valid;
     const formTouched = this.formProject.touched;
-    const buttonDisabled = !formValid && formTouched ? true : false;
-
-    return buttonDisabled;
+    const tasksValid = this.tasks.value[this.tasks.length - 1].title === '';
+    
+    return formValid && formTouched && !tasksValid;
   }
   
   createProject() {
@@ -59,24 +77,19 @@ export class ModalCreateComponent implements OnInit {
     if (formValid) {
       
       const payload: TCriaProject = {
-        title: this.formProject.value.title!,
+        title: this.formProject.value.projectName!,
         description: this.formProject.value.description!,
         tasks: this.formProject.value.tasks!,
       }
       
       this.projectService.createProjects(payload).subscribe({
-        next: (sucess) => {
-          console.log('retorno', sucess);
-              
-         
-          this.dialogRef.close(payload);
+        next: (sucess: any) => {          
+          this.dialogRef.close(sucess.project);
         },
         error: (error) => {
           console.error(error)
         }
       })
-      
-      
       
      } else {
       swal({
