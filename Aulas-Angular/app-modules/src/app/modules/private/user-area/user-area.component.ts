@@ -32,13 +32,7 @@ export class UserAreaComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private projectService: ProjectService,
-
-  ) {
-    //Usar o formGroup nos forms de dentro do modal
-    //Ao clicar no botão salvar o modal faz a requisição para salvar e só fecha se der sucesso na requisição
-    //Estudar como poderia ser implementado um drag and drop do material na tela de project-area
-    //https://material.angular.io/cdk/drag-drop/overview
-  }
+  ) {}
 
   ngOnInit(): void {
     this.getProjects()

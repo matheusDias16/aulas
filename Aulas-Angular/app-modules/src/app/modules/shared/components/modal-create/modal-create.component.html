@@ -12,7 +12,7 @@
       <section class="coluna">
         <div class="form-field">
           <label>Nome do projeto</label>
-          <input class="nome" type="text" formControlName="title" />
+          <input class="nome" type="text" formControlName="projectName" />
         </div>
 
         <div class="form-field">
@@ -27,18 +27,32 @@
           ></textarea>
         </div>
       </section>
-      
+
       <section class="coluna">
-        
         <div class="form-field">
           <label>Tarefas</label>
-          <div class="task-field" *ngFor="let i of lista">
-            <input class="nome" type="text" [(ngModel)]="input"/>
-            <img src="../../../../../assets/add-36.png" alt="add" (click)="addTask()" />
+          <div formArrayName="tasks">
+            <div
+              class="task-field"
+              *ngFor="let task of tasks.controls; let i = index"
+              [formGroupName]="i"
+            >
+              <input class="nome" type="text" formControlName="title" [readOnly]="tasks.controls.length !== i + 1"/>
+              <img
+                *ngIf="tasks.controls.length === i + 1"
+                src="../../../../../assets/add-36.png"
+                alt="add"
+                (click)="addTask(i)"
+              />
+              <img
+                *ngIf="tasks.controls.length !== i + 1"
+                src="../../../../../assets/delete-24.png"
+                alt="remove"
+                (click)="removeTask(i)"
+              />
+            </div>
           </div>
-          
         </div>
-        
       </section>
     </div>
   </form>
@@ -46,7 +60,7 @@
     <div class="btn">
       <button
         mat-button
-        [disabled]="checkFormValidity()"
+        [disabled]="!checkFormValidity()"
         (click)="createProject()"
       >
         Salvar
