@@ -7,7 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import { ProjectAreaComponent } from './project-area/project-area.component';
-
+import { CdkDrag,CdkDropList, CdkDropListGroup,} from '@angular/cdk/drag-drop';
 
 
 
@@ -17,6 +17,9 @@ import { ProjectAreaComponent } from './project-area/project-area.component';
     UserAreaComponent,
     ProjectAreaComponent,
   ],
-  imports: [CommonModule, PrivateRoutingModule, SharedModule,MatButtonModule,MatTableModule]
+  imports: [
+    CommonModule, PrivateRoutingModule, SharedModule,
+    MatButtonModule,MatTableModule,
+    CdkDropList, CdkDrag,CdkDropListGroup]
 })
 export class PrivateModule {}

@@ -5,6 +5,7 @@
     height: 552px;
     padding: 22px 0 0;
     box-shadow: 0 2px 6px 0 #0000001a;
+    
 
     .title {
       .content {
@@ -41,10 +42,9 @@
 }
 
 .cont {
-  padding: 0 22px 22px;
+  padding: 0 44px 12px;
   display: flex;
-  gap: 24px;
-  //align-items: center;
+  justify-content: space-between;
 
   .coluna {
     display: flex;
@@ -55,6 +55,7 @@
     display: flex;
     flex-direction: column;
 
+
     label {
       font-family: Poppins;
       font-size: 16px;
@@ -62,6 +63,9 @@
       line-height: 24px;
       text-align: left;
       color: #545776;
+      padding-top: 20px;
+      padding-bottom: 3px;
+
     }
 
     .nome {
@@ -70,6 +74,12 @@
       border-radius: 8px;
       width: 200px;
       height: 30px;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: left;
+
     }
 
     .desc {
@@ -78,12 +88,18 @@
       border-radius: 8px;
       width: 200px;
       height: 200px;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: left;
+
     }
 
     .task-field {
       display: flex;
       align-items: center;
-      
+
       .nome {
         width: 200px;
         height: 30px;
