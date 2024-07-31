@@ -3,6 +3,17 @@ import { Injectable } from '@angular/core';
 import { apiUrl } from '../../../../environments/environment';
 import { Observable } from 'rxjs';
 
+export type TTaskFull =  {
+  _id: string,
+  title: string,
+  project: string,
+  assignedTo: string,
+  completed: boolean,
+  createdAt: string,
+  __v: number,
+}
+
+
 export type TTask = {
   title: string
   assignedTo: string
@@ -25,15 +36,7 @@ export type Tproject = {
     createdAt: string,
     __v: number
   },
-  tasks: {
-    _id: string,
-    title: string,
-    project: string,
-    assignedTo: string,
-    completed: boolean,
-    createdAt: string,
-    __v: number,
-  }[],
+  tasks:TTaskFull[],
   createdAt: string,
   __v: number
 };
@@ -66,6 +69,21 @@ export class ProjectService {
   public createProjects(payload: TCriaProject) {
     return this.http.post(
       `${apiUrl}/projects`, payload,
+      { headers: this.header }
+    );
+  }
+
+  public getShowProject(idDoProjeto: string): Observable<{project:Tproject}>  {
+    return this.http.get<{project:Tproject}>(
+      `${apiUrl}/projects/${idDoProjeto}`,
+      { headers: this.header }
+    );
+  }
+
+  public putProject(project:  Tproject) : Observable<{project:Tproject}> {
+    return this.http.put<{project:Tproject}>(
+      `${apiUrl}/projects/${project._id}`,
+      project,
       { headers: this.header }
     );
   }
