@@ -1,1 +1,39 @@
-<p>project-area works!</p>
+<div class="cont">
+<p>{{this.project?this.project.title:''}}</p>
+  <div class="quadro" cdkDropListGroup>
+    <div class="example-container">
+
+      <h2>A fazer</h2>
+
+      <div class="example-list" cdkDropList [cdkDropListData]="todo" (cdkDropListDropped)="drop($event)">
+
+        @for (item of todo; track item) {
+        <div class="example-box" cdkDrag>{{item.title}}
+          <div class="imagem">
+            <img src="../../../../assets/edit-24.png" alt="">
+            <img src="../../../../assets/delete-24.png " alt="add" (click)="deleteTask(item._id)" /> 
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    
+    <div class="separa"></div>
+
+    <div class="example-container">
+      <h2>Feito</h2>
+      <div class="example-list" cdkDropList [cdkDropListData]="done" (cdkDropListDropped)="drop($event)">
+
+        @for (item of done; track item) {
+        <div class="example-box" cdkDrag> {{item.title}}
+          <div class="imagem">
+            <img src="../../../../assets/edit-24.png" alt="">
+            <img src="../../../../assets/delete-24.png " alt="add" />
+          </div>
+        </div>
+        }
+
+      </div>
+    </div>
+  </div>
+</div>
