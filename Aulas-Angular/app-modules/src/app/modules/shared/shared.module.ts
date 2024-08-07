@@ -16,6 +16,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { ModalCreateComponent } from './components/modal-create/modal-create.component';
 import { MatInputModule } from '@angular/material/input';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+
 @NgModule({
   //Declara os componentes que pertencem a esse module
   declarations: [
@@ -30,9 +34,10 @@ import { MatInputModule } from '@angular/material/input';
     CpfDirective,
     UpperCasePipe,
     ModalCreateComponent,
+    SpinnerComponent,
   ],
   // importa tudo que precisa para os componentes desse module funcionar
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatDialogModule,MatInputModule,MatLabel, MatDividerModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatFormFieldModule, MatDialogModule, MatInputModule, MatLabel, MatDividerModule, MatProgressSpinnerModule],
   //exportas os componentes criados para poder ser usado em outros lugares da aplicação
   exports: [
     ModalDeleteComponent,
@@ -40,6 +45,7 @@ import { MatInputModule } from '@angular/material/input';
     CepMaskDirective,
     RxjsComponent,
     FormsComponent,
+    SpinnerComponent
   ],
 })
 export class SharedModule {}

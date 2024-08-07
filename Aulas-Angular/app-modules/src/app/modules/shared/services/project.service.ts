@@ -4,7 +4,7 @@ import { apiUrl } from '../../../../environments/environment';
 import { Observable } from 'rxjs';
 
 export type TTaskFull =  {
-  _id: string,
+  _id?: string,
   title: string,
   project: string,
   assignedTo: string,
