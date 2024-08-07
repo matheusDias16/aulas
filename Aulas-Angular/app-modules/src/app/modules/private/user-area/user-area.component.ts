@@ -57,7 +57,7 @@ export class UserAreaComponent implements OnInit {
       })
     }
   }
-  openModal(id: string): void {
+  openDeleteProjectModal(id: string): void {
     const dialogRef = this.dialog.open(ModalDeleteComponent, {
       autoFocus: true,
       disableClose: true,
@@ -101,6 +101,7 @@ export class UserAreaComponent implements OnInit {
     })
   }
 
+  
   openModalCreate(): void {
     const dialogRef = this.dialog.open(ModalCreateComponent, {
       autoFocus: true,
@@ -108,11 +109,8 @@ export class UserAreaComponent implements OnInit {
     })
 
     dialogRef.afterClosed().subscribe((data) => {
-      if (!data) return;
-
-      console.log('dados recebidos', data);
-      
-      //this.projects.push(data)
+      if (!data) return;      
+      this.projects.push(data)
       swal({
         title: "Projeto criado!",
         text: 'O seu novo projeto foi criado com sucesso!',

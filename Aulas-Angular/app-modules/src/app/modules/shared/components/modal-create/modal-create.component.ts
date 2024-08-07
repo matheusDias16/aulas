@@ -3,7 +3,6 @@ import { MatDialogRef } from '@angular/material/dialog'
 import { FormBuilder, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProjectService, TCriaProject, TTask } from '../../services/project.service';
 import swal from 'sweetalert';
-import { TUserSingle } from '../../services/auth.service'
 
 type TProject = {
   projectName: FormControl<string | null>,

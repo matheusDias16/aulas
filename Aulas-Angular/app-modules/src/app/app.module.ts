@@ -6,8 +6,10 @@ import { PublicModule } from './modules/public/public.module';
 import { PrivateModule } from './modules/private/private.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, HttpClientModule } from '@angular/common/http';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+//import { SpinnerComponent } from '../app/modules/shared/components/spinner/spinner.component';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,12 +19,18 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     PublicModule,
     PrivateModule,
     SharedModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync(),
     provideHttpClient(),
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    JwtHelperService
+    JwtHelperService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
 })
