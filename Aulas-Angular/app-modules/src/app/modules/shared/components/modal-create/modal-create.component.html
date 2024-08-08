@@ -31,7 +31,7 @@
       <section class="coluna">
         <div class="form-field">
           <label>Tarefas</label>
-          <div formArrayName="tasks">
+          <div class="task-container" formArrayName="tasks">
             <div
               class="task-field"
               *ngFor="let task of tasks.controls; let i = index"

@@ -2,11 +2,18 @@
   background: radial-gradient(
     circle,
     rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
+    rgb(175, 184, 194) 100%
   );
   height: 100vh;
   padding: 2rem;
+p{
+font-family: Poppins;
+font-size: 24px;
+font-weight: 700;
+line-height: 36px;
+text-align: left;
 
+}
   .novo {
     display: flex;
     justify-content: flex-end;

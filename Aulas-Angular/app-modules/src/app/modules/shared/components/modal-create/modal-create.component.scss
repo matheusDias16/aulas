@@ -44,7 +44,7 @@
 .cont {
   padding: 22px;
   display: flex;
-  justify-content: space-between;
+  gap: 60px;
 
   .coluna {
     display: flex;
@@ -55,7 +55,11 @@
   .form-field {
     display: flex;
     flex-direction: column;
-
+   
+.task-container{
+  max-height: 280px;
+  overflow-y: auto;
+}
 
     label {
       font-family: Poppins;
@@ -80,6 +84,7 @@
       font-weight: 700;
       line-height: 24px;
       text-align: left;
+      
 
     }
 
@@ -87,7 +92,7 @@
       background: #94bbe91a;
       border: 1px solid #94bbe94d;
       border-radius: 8px;
-      width: 200px;
+      max-width: 200px;
       height: 200px;
       font-family: Poppins;
       font-size: 16px;
@@ -100,11 +105,13 @@
     .task-field {
       display: flex;
       align-items: center;
+      
 
       .nome {
         width: 200px;
         height: 30px;
         padding-left: 20px;
+        margin-bottom: 5px;
       }
       img {
         width: 24px;

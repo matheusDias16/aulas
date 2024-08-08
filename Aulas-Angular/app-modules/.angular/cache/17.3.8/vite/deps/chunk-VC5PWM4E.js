@@ -11,7 +11,7 @@ import {
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   normalizePassiveListenerOptions
-} from "./chunk-OWN6ZCKJ.js";
+} from "./chunk-XQCBIW4O.js";
 import {
   DOCUMENT
 } from "./chunk-RWWNQKGF.js";
@@ -2033,4 +2033,4 @@ export {
   MatOptionModule,
   MatRippleLoader
 };
-//# sourceMappingURL=chunk-G2MONM2X.js.map
+//# sourceMappingURL=chunk-VC5PWM4E.js.map
